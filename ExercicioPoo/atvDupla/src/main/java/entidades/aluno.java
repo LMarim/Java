@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entidades;
 
 
@@ -27,7 +24,7 @@ public class aluno {
         System.out.println("Pontos que faltam:");
         double pontoNes;
         pontoNes = 60 - media;
-        System.out.println(pontoNes);
+        System.out.println(String.format("%.2f",pontoNes));
     }
         return 0;
     }
