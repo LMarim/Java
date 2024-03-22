@@ -26,7 +26,7 @@ public class Atv {
         System.out.println("Existe um deposito inicial na conta (y/n)?");
         char resposta = sc.next().charAt(0);
         
-        if (resposta == 'y') {
+        if (resposta == 'y' || resposta 'Y') {
             System.out.println("Insira o valor do deposito inicial");
             double inicialDeposito = sc.nextDouble();
             conta = new Conta(numero, titular, inicialDeposito);
