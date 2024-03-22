@@ -40,12 +40,24 @@ public class Conta {
     public void saque(double quantia) {
         saldo -= quantia + 5.0;
     }
+    
+    public void emprestimo(ContaEmpresa empresa, double quantia) {
+        if (quantia <= empresa.getLimite_emprestimo()) {
+            empresa.deposito(quantia);
+            empresa.setLimite_emprestimo(empresa.getLimite_emprestimo() - quantia);
+            deposito(quantia);
+            System.out.println("Empréstimo de R$" + String.format("%.2f", quantia) + " realizado com sucesso.");
+        } else {
+            System.out.println("O valor solicitado excede o limite de empréstimo da empresa.");
+        }
+    }
+    
     public String toString() {
 return "Conta "
 + numero
 + ", Titular: "
 + titular
-+ ", Saldo: $ "
++ ", Saldo: R$ "
 + String.format("%.2f", saldo);
 }
     
